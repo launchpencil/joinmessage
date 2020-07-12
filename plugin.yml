@@ -1,0 +1,5 @@
+name: JoinMessage
+main: launchpencil\joinmessage\main
+version: 1.5.0
+api: 3.12.0
+author: launchpencil
