@@ -1,6 +1,7 @@
 <?php
-namespace launchpencil\joinmessage;
+namespace launchpencil\joinmessage;//ファイルの位置
 
+//呼び出し軍
 use pocketmine\plugin\PluginBase;
 use pocketmine\Player;
 use pocketmine\event\Listener;
@@ -10,7 +11,7 @@ use pocketmine\event\player\PlayerQuitEvent;
 
 class main extends pluginBase implements Listener
 {
-    public function onEnable()
+    public function onEnable()//起動時の処理
     {
         $this->getLogger()->notice("-----------------------");
         $this->getLogger()->notice("入退室通知プラグインの ");
@@ -18,13 +19,13 @@ class main extends pluginBase implements Listener
         $this->getLogger()->notice("-----------------------");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
-    public function join(PlayerJoinEvent $event)
+    public function join(PlayerJoinEvent $event)//参加時
     {
         $name = $event->getPlayer()->getName();
         $event->setJoinMessage("§a$name さんが参加しました。ごゆっくりどうぞ。");
     }
 
-    public function onquit(PlayerQuitEvent $event)
+    public function onquit(PlayerQuitEvent $event)//退出時
     {
         $reason = $event->getQuitReason();
         $player = $event->getPlayer();
