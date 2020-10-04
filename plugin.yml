@@ -1,5 +1,5 @@
 name: JoinMessage
-main: launchpencil\joinmessage\main
+main: launchpencil\joinmessage\ain
 version: 1.5.5
 api: 3.12.0
 author: launchpencil
