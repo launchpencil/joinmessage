@@ -9,7 +9,7 @@ use pocketmine\Server;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 
-class main extends pluginBase implements Listener
+class Main extends pluginBase implements Listener
 {
     public function onEnable()//起動時の処理
     {
