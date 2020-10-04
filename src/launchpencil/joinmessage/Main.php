@@ -9,7 +9,7 @@ use pocketmine\Server;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 
-class main extends pluginBase implements Listener
+class Main extends pluginBase implements Listener
 {
     public function onEnable()//起動時の処理
     {
@@ -37,17 +37,19 @@ class main extends pluginBase implements Listener
         $quit3 = "§a$name さんがサーバーのエラーにより退出しました。";
 
         //退出時のif判定
-        if ($reason === 'client disconnect') {
+        switch($reason)
+        {
+            case 'client disconnect':
                 $event->setQuitMessage($quit1);//ここで上のものを流す
-                return true;
-        }
-        if ($reason === 'timeout') {
+                break;
+                
+            case 'timeout':
                 $event->setQuitMessage($quit2);//ここで上のものを流す
-                return true;
-        }
-        if ($reason === 'Internal server error') {
-                $event->setQuitMessage($quit3);//ここで上のものを流す
-                return true;
-        }
-        }
+                break;
+                
+            case 'Internal server error':
+                $event->setQuitMessage($quit3);
+                break;
+        }       
+     }
 }
