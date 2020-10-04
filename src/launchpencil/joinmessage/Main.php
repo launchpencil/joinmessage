@@ -35,8 +35,9 @@ class Main extends pluginBase implements Listener
         $quit1 = "§a$name さんが切断により退出しました。";
         $quit2 = "§a$name さんがタイムアウトにより退出しました。";
         $quit3 = "§a$name さんがサーバーのエラーにより退出しました。";
-        $quit4 = "§a$name さんがにより退出しました。";
-        $quit5 = "§a$name さんがにより退出しました。";
+        $quit4 = "§a$name さんがキックにより退出しました。";
+        $quit5 = "§a$name さんがBANにより退出しました。";
+        $quit6 = "§a$name さんがその他の理由により退出しました。";
 
         //退出時のif判定
         switch($reason)
@@ -51,6 +52,12 @@ class Main extends pluginBase implements Listener
                 
             case 'Internal server error':
                 $event->setQuitMessage($quit3);
+                break;
+            case 'Kicked by admin.':
+                $event->setQuitMessage($quit4);
+                break;
+            case 'Banned by admin.':
+                $event->setQuitMessage($quit5);
                 break;
         }       
      }
