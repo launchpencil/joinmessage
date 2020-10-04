@@ -35,6 +35,8 @@ class Main extends pluginBase implements Listener
         $quit1 = "§a$name さんが切断により退出しました。";
         $quit2 = "§a$name さんがタイムアウトにより退出しました。";
         $quit3 = "§a$name さんがサーバーのエラーにより退出しました。";
+        $quit4 = "§a$name さんがにより退出しました。";
+        $quit5 = "§a$name さんがにより退出しました。";
 
         //退出時のif判定
         switch($reason)
