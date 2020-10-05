@@ -57,7 +57,11 @@ class Main extends pluginBase implements Listener
                 $event->setQuitMessage($quit4);
                 break;
             case 'Banned by admin.':
+            case 'Kicked by admin. Reason: IP banned.':
                 $event->setQuitMessage($quit5);
+                break;
+            default;
+                $event->setQuitMessage($quit6);
                 break;
         }       
      }
