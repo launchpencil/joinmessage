@@ -38,6 +38,7 @@ class Main extends pluginBase implements Listener
         $quit4 = "§a$name さんがキックにより退出しました。";
         $quit5 = "§a$name さんがBANにより退出しました。";
         $quit6 = "§a$name さんがその他の理由により退出しました。";
+        $quit7 = "§a$name さんが他端末からのログインにより退出しました。";
 
         //退出時のif判定
         switch($reason)
@@ -59,6 +60,9 @@ class Main extends pluginBase implements Listener
             case 'Banned by admin.':
             case 'Kicked by admin. Reason: IP banned.':
                 $event->setQuitMessage($quit5);
+                break;
+            case 'Kicked by admin. Reason: logged in from another location':
+                $event->setQuitMessage($quit7);
                 break;
             default;
                 $event->setQuitMessage($quit6);
